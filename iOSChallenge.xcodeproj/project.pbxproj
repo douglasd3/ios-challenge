@@ -10,7 +10,6 @@
 		4AC1EC13E4DD846766CA5D56 /* libPods-iOSChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */; };
 		A5446CAC1B3AE7F400162684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAB1B3AE7F400162684 /* main.m */; };
 		A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAE1B3AE7F400162684 /* AppDelegate.m */; };
-		A5446CB21B3AE7F400162684 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CB11B3AE7F400162684 /* ViewController.m */; };
 		A5446CB51B3AE7F500162684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB31B3AE7F500162684 /* Main.storyboard */; };
 		A5446CB71B3AE7F500162684 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB61B3AE7F500162684 /* Images.xcassets */; };
 		A5446CBA1B3AE7F500162684 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB81B3AE7F500162684 /* LaunchScreen.xib */; };
@@ -19,6 +18,7 @@
 		A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */; };
 		A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* APIResults.m */; };
 		A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF051B3B548000305562 /* PhotosResults.m */; };
+		A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 		A5446CAB1B3AE7F400162684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5446CAD1B3AE7F400162684 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5446CAE1B3AE7F400162684 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A5446CB01B3AE7F400162684 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A5446CB11B3AE7F400162684 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A5446CB41B3AE7F500162684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5446CB61B3AE7F500162684 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5446CB91B3AE7F500162684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		A5E1BF021B3B53CE00305562 /* APIResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResults.m; sourceTree = "<group>"; };
 		A5E1BF041B3B548000305562 /* PhotosResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosResults.h; sourceTree = "<group>"; };
 		A5E1BF051B3B548000305562 /* PhotosResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosResults.m; sourceTree = "<group>"; };
+		A5E1BF081B3B693700305562 /* PhotosListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosListTableViewController.h; sourceTree = "<group>"; };
+		A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosListTableViewController.m; sourceTree = "<group>"; };
 		A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,8 +139,8 @@
 		A5E1BEF81B3B21B400305562 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A5446CB01B3AE7F400162684 /* ViewController.h */,
-				A5446CB11B3AE7F400162684 /* ViewController.m */,
+				A5E1BF081B3B693700305562 /* PhotosListTableViewController.h */,
+				A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 			files = (
 				A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */,
 				A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */,
-				A5446CB21B3AE7F400162684 /* ViewController.m in Sources */,
+				A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */,
 				A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */,
 				A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */,
 				A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */,

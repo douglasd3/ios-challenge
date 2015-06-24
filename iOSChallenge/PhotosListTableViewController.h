@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotosListTableViewController.h
 //  iOSChallenge
 //
 //  Created by Douglas Barbosa on 24/06/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PhotosListTableViewController : UITableViewController
 
 @end
-
