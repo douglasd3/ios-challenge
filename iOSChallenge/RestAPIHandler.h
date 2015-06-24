@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
 @interface RestAPIHandler : NSObject
+
+- (void)getRecentPhotos;
+ 
 
 @end

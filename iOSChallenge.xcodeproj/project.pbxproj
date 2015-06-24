@@ -15,6 +15,7 @@
 		A5446CB71B3AE7F500162684 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB61B3AE7F500162684 /* Images.xcassets */; };
 		A5446CBA1B3AE7F500162684 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB81B3AE7F500162684 /* LaunchScreen.xib */; };
 		A5446CC61B3AE7F500162684 /* iOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */; };
+		A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		A5446CBF1B3AE7F500162684 /* iOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5446CC41B3AE7F500162684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSChallengeTests.m; sourceTree = "<group>"; };
+		A5E1BEFB1B3B22AA00305562 /* RestAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPIHandler.h; sourceTree = "<group>"; };
+		A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIHandler.m; sourceTree = "<group>"; };
 		A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,11 +93,9 @@
 			children = (
 				A5446CAD1B3AE7F400162684 /* AppDelegate.h */,
 				A5446CAE1B3AE7F400162684 /* AppDelegate.m */,
-				A5446CB01B3AE7F400162684 /* ViewController.h */,
-				A5446CB11B3AE7F400162684 /* ViewController.m */,
-				A5446CB31B3AE7F500162684 /* Main.storyboard */,
-				A5446CB61B3AE7F500162684 /* Images.xcassets */,
-				A5446CB81B3AE7F500162684 /* LaunchScreen.xib */,
+				A5E1BEF91B3B21C500305562 /* Model */,
+				A5E1BEF81B3B21B400305562 /* Controllers */,
+				A5E1BEFA1B3B21DA00305562 /* Resources */,
 				A5446CA91B3AE7F400162684 /* Supporting Files */,
 			);
 			path = iOSChallenge;
@@ -124,6 +125,34 @@
 				A5446CC41B3AE7F500162684 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5E1BEF81B3B21B400305562 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5446CB01B3AE7F400162684 /* ViewController.h */,
+				A5446CB11B3AE7F400162684 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A5E1BEF91B3B21C500305562 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5E1BEFB1B3B22AA00305562 /* RestAPIHandler.h */,
+				A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A5E1BEFA1B3B21DA00305562 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5446CB31B3AE7F500162684 /* Main.storyboard */,
+				A5446CB61B3AE7F500162684 /* Images.xcassets */,
+				A5446CB81B3AE7F500162684 /* LaunchScreen.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		D871EE4F11EE449D04767AC6 /* Pods */ = {
@@ -279,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5446CB21B3AE7F400162684 /* ViewController.m in Sources */,
+				A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */,
 				A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */,
 				A5446CAC1B3AE7F400162684 /* main.m in Sources */,
 			);

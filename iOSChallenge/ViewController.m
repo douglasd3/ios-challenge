@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RestAPIHandler.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Hello");
+    
+    RestAPIHandler *apiManager = [[RestAPIHandler alloc] init];
+    
+    [apiManager getRecentPhotos];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
