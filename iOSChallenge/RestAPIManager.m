@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Douglas Barbosa. All rights reserved.
 //
 
-#import "RestAPIHandler.h"
+#import "RestAPIManager.h"
 
 #define API_HOME @"https://api.flickr.com/services/rest/"
 #define API_KEY @"5f1bda0ff51d35493f69a98774a10279"
 
 AFHTTPRequestOperationManager *afManager;
 
-@implementation RestAPIHandler
+@implementation RestAPIManager
 
 - (id)init{
     self = [super init];

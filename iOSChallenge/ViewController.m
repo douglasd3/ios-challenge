@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "RestAPIHandler.h"
+#import "RestAPIManager.h"
 
 @interface ViewController ()
 
@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    RestAPIHandler *apiManager = [[RestAPIHandler alloc] init];
+    RestAPIManager *apiManager = [[RestAPIManager alloc] init];
     
     [apiManager getRecentPhotos];
     

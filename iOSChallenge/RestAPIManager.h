@@ -10,7 +10,7 @@
 #import <AFNetworking.h>
 #import "APIResults.h"
 
-@interface RestAPIHandler : NSObject
+@interface RestAPIManager : NSObject
 
 - (void)getRecentPhotos;
  

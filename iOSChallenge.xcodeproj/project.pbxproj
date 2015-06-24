@@ -15,7 +15,7 @@
 		A5446CB71B3AE7F500162684 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB61B3AE7F500162684 /* Images.xcassets */; };
 		A5446CBA1B3AE7F500162684 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB81B3AE7F500162684 /* LaunchScreen.xib */; };
 		A5446CC61B3AE7F500162684 /* iOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */; };
-		A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */; };
+		A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */; };
 		A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */; };
 		A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* APIResults.m */; };
 		A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF051B3B548000305562 /* PhotosResults.m */; };
@@ -46,8 +46,8 @@
 		A5446CBF1B3AE7F500162684 /* iOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5446CC41B3AE7F500162684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSChallengeTests.m; sourceTree = "<group>"; };
-		A5E1BEFB1B3B22AA00305562 /* RestAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPIHandler.h; sourceTree = "<group>"; };
-		A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIHandler.m; sourceTree = "<group>"; };
+		A5E1BEFB1B3B22AA00305562 /* RestAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPIManager.h; sourceTree = "<group>"; };
+		A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIManager.m; sourceTree = "<group>"; };
 		A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoObject.h; sourceTree = "<group>"; };
 		A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
 		A5E1BF011B3B53CE00305562 /* APIResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResults.h; sourceTree = "<group>"; };
@@ -148,8 +148,8 @@
 		A5E1BEF91B3B21C500305562 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A5E1BEFB1B3B22AA00305562 /* RestAPIHandler.h */,
-				A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */,
+				A5E1BEFB1B3B22AA00305562 /* RestAPIManager.h */,
+				A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */,
 				A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */,
 				A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */,
 				A5E1BF011B3B53CE00305562 /* APIResults.h */,
@@ -325,7 +325,7 @@
 				A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */,
 				A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */,
 				A5446CB21B3AE7F400162684 /* ViewController.m in Sources */,
-				A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */,
+				A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */,
 				A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */,
 				A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */,
 				A5446CAC1B3AE7F400162684 /* main.m in Sources */,
