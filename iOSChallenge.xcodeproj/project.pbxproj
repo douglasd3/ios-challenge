@@ -148,14 +148,9 @@
 		A5E1BEF91B3B21C500305562 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A5E1BF071B3B662600305562 /* PhotoModel */,
 				A5E1BEFB1B3B22AA00305562 /* RestAPIManager.h */,
 				A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */,
-				A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */,
-				A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */,
-				A5E1BF011B3B53CE00305562 /* APIResults.h */,
-				A5E1BF021B3B53CE00305562 /* APIResults.m */,
-				A5E1BF041B3B548000305562 /* PhotosResults.h */,
-				A5E1BF051B3B548000305562 /* PhotosResults.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,6 +163,19 @@
 				A5446CB81B3AE7F500162684 /* LaunchScreen.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A5E1BF071B3B662600305562 /* PhotoModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */,
+				A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */,
+				A5E1BF011B3B53CE00305562 /* APIResults.h */,
+				A5E1BF021B3B53CE00305562 /* APIResults.m */,
+				A5E1BF041B3B548000305562 /* PhotosResults.h */,
+				A5E1BF051B3B548000305562 /* PhotosResults.m */,
+			);
+			name = PhotoModel;
 			sourceTree = "<group>";
 		};
 		D871EE4F11EE449D04767AC6 /* Pods */ = {

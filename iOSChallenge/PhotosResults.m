@@ -25,7 +25,6 @@
 + (NSValueTransformer *)photosJSONTransformer {
     
     return [MTLJSONAdapter arrayTransformerWithModelClass:PhotoObject.class];
-    //return [MTLJSONAdapter dictionaryTransformerWithModelClass:PhotosResults.class];
     
 }
 
