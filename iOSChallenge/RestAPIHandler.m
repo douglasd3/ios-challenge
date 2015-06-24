@@ -27,7 +27,7 @@ AFHTTPRequestOperationManager *afManager;
 
 - (void)getRecentPhotos{
     
-    NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"format":@"json", @"nojsoncallback":@"1"};
+    NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"extras":@"owner_name", @"format":@"json", @"nojsoncallback":@"1"};
     
     [afManager GET:API_HOME parameters:parameters
      
