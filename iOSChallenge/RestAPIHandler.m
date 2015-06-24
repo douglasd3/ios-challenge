@@ -29,10 +29,19 @@ AFHTTPRequestOperationManager *afManager;
     
     NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"extras":@"owner_name", @"format":@"json", @"nojsoncallback":@"1"};
     
+    afManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
     [afManager GET:API_HOME parameters:parameters
      
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               NSLog(@"JSON: %@", responseObject);}
+               
+               NSDictionary *responseDic = (NSDictionary *)responseObject;
+               
+               APIResults *resultsObject = [MTLJSONAdapter modelOfClass:APIResults.class fromJSONDictionary:responseDic error:nil];
+               
+               NSLog(@"JSON: %@", responseDic);
+               NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
+           }
      
            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                NSLog(@"Error: %@", error);

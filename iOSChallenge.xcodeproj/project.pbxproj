@@ -17,6 +17,8 @@
 		A5446CC61B3AE7F500162684 /* iOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */; };
 		A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */; };
 		A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */; };
+		A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* APIResults.m */; };
+		A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF051B3B548000305562 /* PhotosResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIHandler.m; sourceTree = "<group>"; };
 		A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoObject.h; sourceTree = "<group>"; };
 		A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
+		A5E1BF011B3B53CE00305562 /* APIResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResults.h; sourceTree = "<group>"; };
+		A5E1BF021B3B53CE00305562 /* APIResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResults.m; sourceTree = "<group>"; };
+		A5E1BF041B3B548000305562 /* PhotosResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosResults.h; sourceTree = "<group>"; };
+		A5E1BF051B3B548000305562 /* PhotosResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosResults.m; sourceTree = "<group>"; };
 		A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +152,10 @@
 				A5E1BEFC1B3B22AA00305562 /* RestAPIHandler.m */,
 				A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */,
 				A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */,
+				A5E1BF011B3B53CE00305562 /* APIResults.h */,
+				A5E1BF021B3B53CE00305562 /* APIResults.m */,
+				A5E1BF041B3B548000305562 /* PhotosResults.h */,
+				A5E1BF051B3B548000305562 /* PhotosResults.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,8 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */,
+				A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */,
 				A5446CB21B3AE7F400162684 /* ViewController.m in Sources */,
 				A5E1BEFD1B3B22AA00305562 /* RestAPIHandler.m in Sources */,
+				A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */,
 				A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */,
 				A5446CAC1B3AE7F400162684 /* main.m in Sources */,
 			);
