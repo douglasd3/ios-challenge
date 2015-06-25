@@ -32,6 +32,7 @@
 - (void)getRecentPhotosForPage:(NSNumber *)page;
 - (void)getPhotoInfoForPhoto:(PhotoObject *)photo;
 - (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject andSize:(NSString *)imgSize;
+- (NSURL *)getUserIconURLWithPhotoInfoOwner:(PhotoInfoOwner *)owner;
  
 
 @end

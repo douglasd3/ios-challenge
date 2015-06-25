@@ -133,6 +133,19 @@ AFHTTPRequestOperationManager *afManager;
 
 }
 
+- (NSURL *)getUserIconURLWithPhotoInfoOwner:(PhotoInfoOwner *)owner{
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/buddyicons/%@.jpg", owner.iconfarm, owner.iconserver, owner.nsid];
+    
+    NSURL *imageURL = [NSURL URLWithString:urlString];
+    
+    NSLog(@"imageURL %@ ", urlString);
+    
+    return imageURL;
+    
+}
+
+
 
 - (void)requestRecentPhotosFinishedWithData:(RecentPhotosResults *)results{
     

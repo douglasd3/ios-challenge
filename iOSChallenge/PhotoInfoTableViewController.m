@@ -81,6 +81,9 @@ NSArray *keys;
         if (row == 0) {
             cell.photoOwner.text = self.photo.ownerName;
             cell.photoTitle.text = self.photo.title;
+            
+            [cell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+
         }
     }
     
@@ -148,6 +151,8 @@ NSArray *keys;
 }
 
 - (void)handlePhotoInfoResponse:(PhotoInfoResults *)results{
+    
+    self.photoInfo = results;
     
     NSArray *section1 = @[@"userInfo", @"image", @"description"];
 
