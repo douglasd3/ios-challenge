@@ -12,6 +12,13 @@
 #import "RecentPhotosResults.h"
 #import "PhotoInfoResults.h"
 
+#define API_HOME @"https://api.flickr.com/services/rest/"
+#define API_KEY @"31550200485e295aaa8b66227ef8a6cf"
+#define PHOTOS_PER_PAGE @"20"
+
+#define IMAGE_SIZE_THUMB @"s" //75x75
+#define IMAGE_SIZE_MEDIUM @"c" //800x800
+
 @protocol RestAPIManagerDelegate <NSObject>
 @optional
 - (void) handleRecentPhotosResponse:(RecentPhotosResults *)results;
@@ -24,7 +31,7 @@
 
 - (void)getRecentPhotosForPage:(NSNumber *)page;
 - (void)getPhotoInfoForPhoto:(PhotoObject *)photo;
-- (NSURL*)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject;
+- (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject andSize:(NSString *)imgSize;
  
 
 @end

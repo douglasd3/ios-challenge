@@ -84,7 +84,7 @@ PhotoObject *currentPhoto;
     
     cell.photoThumb.layer.masksToBounds = YES;
     
-    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo andSize:IMAGE_SIZE_THUMB]placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     return cell;
 }

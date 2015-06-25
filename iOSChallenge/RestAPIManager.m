@@ -8,9 +8,6 @@
 
 #import "RestAPIManager.h"
 
-#define API_HOME @"https://api.flickr.com/services/rest/"
-#define API_KEY @"31550200485e295aaa8b66227ef8a6cf"
-#define PHOTOS_PER_PAGE @"20"
 
 AFHTTPRequestOperationManager *afManager;
 
@@ -124,9 +121,9 @@ AFHTTPRequestOperationManager *afManager;
     
 }
 
-- (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject{
+- (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject andSize:(NSString *)imgSize{
     
-    NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@_s.jpg", photoObject.farm, photoObject.server, photoObject.photoID, photoObject.secret];
+    NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@_%@.jpg", photoObject.farm, photoObject.server, photoObject.photoID, photoObject.secret, imgSize];
     
     NSURL *imageURL = [NSURL URLWithString:urlString];
     
