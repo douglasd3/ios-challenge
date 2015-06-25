@@ -114,6 +114,11 @@
                                                 <constraint firstAttribute="width" constant="48" id="PPC-g3-m3f"/>
                                                 <constraint firstAttribute="height" constant="48" id="R29-QV-E70"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeB-Z1-qyz">
                                             <rect key="frame" x="64" y="8" width="528" height="21"/>

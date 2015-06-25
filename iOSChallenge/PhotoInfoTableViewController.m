@@ -82,6 +82,8 @@ NSArray *keys;
             cell.photoOwner.text = self.photo.ownerName;
             cell.photoTitle.text = self.photo.title;
             
+            cell.photoThumb.layer.masksToBounds = YES;
+            
             [cell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
         }
