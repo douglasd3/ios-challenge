@@ -10,10 +10,12 @@
 #import "RestAPIManager.h"
 #import "PhotoObject.h"
 #import "PhotoInfoResults.h"
+#import "PhotoTableViewCell.h"
 
-@interface PhotoInfoTableViewController : UITableViewController
+@interface PhotoInfoTableViewController : UITableViewController<RestAPIManagerDelegate>
 
 @property(nonatomic, retain) PhotoObject *photo;
 @property(nonatomic, retain) PhotoInfoResults *photoInfo;
+@property(nonatomic, retain) RestAPIManager *apiManager;
 
 @end

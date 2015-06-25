@@ -8,6 +8,9 @@
 
 #import "PhotoInfoTableViewController.h"
 
+NSDictionary *tableContents;
+NSArray *keys;
+
 @interface PhotoInfoTableViewController ()
 
 @end
@@ -19,9 +22,20 @@
     
     NSLog(@"Photo %@ ", self.photo);
     
-    RestAPIManager *teste = [[RestAPIManager alloc] init];
+    self.apiManager = [[RestAPIManager alloc] init];
+    self.apiManager.delegate = self;
     
-    [teste getPhotoInfoForPhoto:self.photo];
+    [self.apiManager getPhotoInfoForPhoto:self.photo];
+    
+//    NSArray *section1 = @[@"userInfo", @"image", @"description"];
+//    
+//    NSArray *section2 = @[@""];
+//    
+//    menuItems = [NSDictionary dictionaryWithObjectsAndKeys:temp1, @"a", temp2, @"b", nil];
+//    
+//    keys = [[menuItems allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    //[teste getPhotoInfoForPhoto:self.photo];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -37,26 +51,41 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [keys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSArray *sectionArray = [tableContents objectForKey:[keys objectAtIndex:section]];
+    
+    return [sectionArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    
+    NSString *cellIdentifier = @"Cell";
+    
+    if (section == 0) {
+        if (row == 0) {
+            cellIdentifier = @"UserInfoCell";
+        }
+    }
+    
+    PhotoTableViewCell *cell = (PhotoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    
+    if (section == 0) {
+        if (row == 0) {
+            cell.photoOwner.text = self.photo.ownerName;
+            cell.photoTitle.text = self.photo.title;
+        }
+    }
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -101,5 +130,35 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    
+    if (section == 0) {
+        if (row == 0) {
+            return 64;
+        }
+    }
+    
+    return 44;
+    
+    
+}
+
+- (void)handlePhotoInfoResponse:(PhotoInfoResults *)results{
+    
+    NSArray *section1 = @[@"userInfo", @"image", @"description"];
+
+    NSArray *section2 = @[@""];
+
+    tableContents = [NSDictionary dictionaryWithObjectsAndKeys:section1, @"a", section2, @"b", nil];
+
+    keys = [[tableContents allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    [self.tableView reloadData];
+    
+}
 
 @end
