@@ -20,7 +20,7 @@
 
 @property (nonatomic,strong) id <RestAPIManagerDelegate> delegate;
 
-- (void)getRecentPhotos;
+- (void)getRecentPhotosForPage:(NSNumber *)page;
 - (NSURL*)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject;
  
 

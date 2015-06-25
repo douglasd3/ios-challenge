@@ -10,6 +10,7 @@
 
 #define API_HOME @"https://api.flickr.com/services/rest/"
 #define API_KEY @"31550200485e295aaa8b66227ef8a6cf"
+#define PHOTOS_PER_PAGE @"20"
 
 AFHTTPRequestOperationManager *afManager;
 
@@ -25,9 +26,9 @@ AFHTTPRequestOperationManager *afManager;
     return self;
 }
 
-- (void)getRecentPhotos{
+- (void)getRecentPhotosForPage:(NSNumber *)page{
     
-    NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"extras":@"owner_name", @"format":@"json", @"nojsoncallback":@"1"};
+    NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"per_page":PHOTOS_PER_PAGE, @"page":page, @"extras":@"owner_name", @"format":@"json", @"nojsoncallback":@"1"};
     
     afManager.responseSerializer = [AFJSONResponseSerializer serializer];
     
@@ -55,7 +56,7 @@ AFHTTPRequestOperationManager *afManager;
                
                [self requestFinishedWithData:resultsObject];
                
-               NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
+               //NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
            }
      
            failure:^(AFHTTPRequestOperation *operation, NSError *error) {

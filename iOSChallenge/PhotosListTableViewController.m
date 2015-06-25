@@ -8,6 +8,8 @@
 
 #import "PhotosListTableViewController.h"
 
+NSNumber *currentPage;
+
 @interface PhotosListTableViewController ()
 
 @end
@@ -20,7 +22,10 @@
     self.apiManager = [[RestAPIManager alloc] init];
     self.apiManager.delegate = self;
     
-    [self.apiManager getRecentPhotos];
+    currentPage = [NSNumber numberWithInteger:1];
+    self.tableContents = [[NSMutableArray alloc] init];
+    
+    [self.apiManager getRecentPhotosForPage:currentPage];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,6 +38,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)setLoadPageViewAction{
+    
+    [self.loadPageView setHidden:NO];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLoadPageAction:)];
+    
+    [self.loadPageView addGestureRecognizer:tap];
+    
+}
+
+- (void)tapLoadPageAction:(UITapGestureRecognizer *)tapGestureRecognizer{
+    
+    [self.apiManager getRecentPhotosForPage:currentPage];
+    
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -114,11 +137,20 @@
 
 - (void)handleRestResponse:(APIResults *)results{
     
-    self.tableContents = [NSMutableArray arrayWithArray:results.photosResults.photos];
-    
-    [self.tableView reloadData];
-    NSLog(@"response teste %@", results);
-    
+    if (results) {
+        
+        [self.tableContents addObjectsFromArray:results.photosResults.photos];
+        
+        //self.tableContents = [NSMutableArray arrayWithArray:results.photosResults.photos];
+        
+        [self.tableView reloadData];
+        //NSLog(@"response teste %@", results);
+        
+        [self setLoadPageViewAction];
+        
+        currentPage = [NSNumber numberWithInteger:currentPage.integerValue + 1];
+        
+    }
     
 }
 

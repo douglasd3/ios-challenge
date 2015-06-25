@@ -14,5 +14,6 @@
 
 @property(nonatomic, retain) NSMutableArray *tableContents;
 @property(nonatomic, retain) RestAPIManager *apiManager;
+@property (weak, nonatomic) IBOutlet UIView *loadPageView;
 
 @end
