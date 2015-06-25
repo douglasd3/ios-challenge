@@ -38,6 +38,11 @@
                                                 <constraint firstAttribute="height" constant="75" id="CLa-Hf-CfI"/>
                                                 <constraint firstAttribute="width" constant="75" id="bZG-y4-mfR"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>

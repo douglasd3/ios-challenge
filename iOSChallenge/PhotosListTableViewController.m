@@ -57,8 +57,10 @@
     
     cell.photoTitle.text = photo.title;
     cell.photoOwner.text = photo.ownerName;
-            
-    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo]];
+    
+    cell.photoThumb.layer.masksToBounds = YES;
+    
+    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     return cell;
 }
