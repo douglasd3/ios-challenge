@@ -10,7 +10,14 @@
 #import <AFNetworking.h>
 #import "APIResults.h"
 
+@protocol RestAPIManagerDelegate <NSObject>
+@required
+- (void) handleRestResponse:(APIResults *)results;
+@end
+
 @interface RestAPIManager : NSObject
+
+@property (nonatomic,strong) id <RestAPIManagerDelegate> delegate;
 
 - (void)getRecentPhotos;
  

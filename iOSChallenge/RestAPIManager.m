@@ -39,6 +39,8 @@ AFHTTPRequestOperationManager *afManager;
                
                APIResults *resultsObject = [MTLJSONAdapter modelOfClass:APIResults.class fromJSONDictionary:responseDic error:nil];
                
+               [self requestFinishedWithData:resultsObject];
+               
                NSLog(@"JSON: %@", responseDic);
                NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
            }
@@ -52,7 +54,16 @@ AFHTTPRequestOperationManager *afManager;
                                                          cancelButtonTitle:@"Ok"
                                                          otherButtonTitles:nil];
                [alertView show];
+               
+               [self requestFinishedWithData:nil];
            }];
+}
+
+- (void)requestFinishedWithData:(APIResults *)results{
+    
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleRestResponse:)]) {
+        [self.delegate handleRestResponse:results];
+    }
 }
 
 

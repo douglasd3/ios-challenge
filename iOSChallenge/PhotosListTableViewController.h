@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RestAPIManager.h"
 
-@interface PhotosListTableViewController : UITableViewController
+@interface PhotosListTableViewController : UITableViewController<RestAPIManagerDelegate>
+
+@property(nonatomic, retain) NSMutableArray *tableContents;
+@property(nonatomic, retain) RestAPIManager *apiManager;
 
 @end

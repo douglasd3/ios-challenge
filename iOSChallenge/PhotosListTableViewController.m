@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.apiManager = [[RestAPIManager alloc] init];
+    self.apiManager.delegate = self;
+    
+    [self.apiManager getRecentPhotos];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,26 +37,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.tableContents count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSInteger row = [indexPath row];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    
+    PhotoObject *photo = [self.tableContents objectAtIndex:row];
+    
+    cell.textLabel.text = photo.title;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -96,5 +104,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - RestAPIManager delegate
+
+- (void)handleRestResponse:(APIResults *)results{
+    
+    self.tableContents = [NSMutableArray arrayWithArray:results.photosResults.photos];
+    
+    [self.tableView reloadData];
+    NSLog(@"response teste %@", results);
+    
+    
+}
 
 @end
