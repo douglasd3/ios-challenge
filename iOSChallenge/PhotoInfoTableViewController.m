@@ -1,33 +1,27 @@
 //
-//  PhotosListTableViewController.m
+//  PhotoInfoTableViewController.m
 //  iOSChallenge
 //
-//  Created by Douglas Barbosa on 24/06/15.
+//  Created by Instituto Reconcavo on 25/06/15.
 //  Copyright (c) 2015 Douglas Barbosa. All rights reserved.
 //
 
-#import "PhotosListTableViewController.h"
+#import "PhotoInfoTableViewController.h"
 
-NSNumber *currentPage;
-PhotoObject *currentPhoto;
-
-@interface PhotosListTableViewController ()
+@interface PhotoInfoTableViewController ()
 
 @end
 
-@implementation PhotosListTableViewController
+@implementation PhotoInfoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.apiManager = [[RestAPIManager alloc] init];
-    self.apiManager.delegate = self;
+    NSLog(@"Photo %@ ", self.photo);
     
-    currentPage = [NSNumber numberWithInteger:1];
-    self.tableContents = [[NSMutableArray alloc] init];
+    RestAPIManager *teste = [[RestAPIManager alloc] init];
     
-    [self.apiManager getRecentPhotosForPage:currentPage];
-    
+    [teste getPhotoInfoForPhoto:self.photo];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,65 +34,29 @@ PhotoObject *currentPhoto;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setLoadPageViewAction{
-    
-    [self.loadPageView setHidden:NO];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLoadPageAction:)];
-    
-    [self.loadPageView addGestureRecognizer:tap];
-    
-}
-
-- (void)tapLoadPageAction:(UITapGestureRecognizer *)tapGestureRecognizer{
-    
-    [self.apiManager getRecentPhotosForPage:currentPage];
-    
-}
-
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.tableContents count];
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    NSInteger row = [indexPath row];
-    
-    PhotoTableViewCell *cell = (PhotoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
-    
-    PhotoObject *photo = [self.tableContents objectAtIndex:row];
-    
-    cell.photoTitle.text = photo.title;
-    cell.photoOwner.text = photo.ownerName;
-    
-    cell.photoThumb.layer.masksToBounds = YES;
-    
-    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    // Configure the cell...
     
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSInteger row = [indexPath row];
-    currentPhoto = [self.tableContents objectAtIndex:row];
-    
-    [self performSegueWithIdentifier:@"PhotoInfoSegue" sender:self];
-    
-    
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -134,39 +92,14 @@ PhotoObject *currentPhoto;
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    PhotoInfoTableViewController *photoInfoView = (PhotoInfoTableViewController *)[segue destinationViewController];
-    
-    photoInfoView.photo = currentPhoto;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
-
-#pragma mark - RestAPIManager delegate
-
-- (void)handleRecentPhotosResponse:(RecentPhotosResults *)results{
-    
-    if (results) {
-        
-        [self.tableContents addObjectsFromArray:results.photosResults.photos];
-        
-        //self.tableContents = [NSMutableArray arrayWithArray:results.photosResults.photos];
-        
-        [self.tableView reloadData];
-        //NSLog(@"response teste %@", results);
-        
-        [self setLoadPageViewAction];
-        
-        currentPage = [NSNumber numberWithInteger:currentPage.integerValue + 1];
-        
-    }
-    
-}
+*/
 
 @end

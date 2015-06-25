@@ -95,14 +95,17 @@ AFHTTPRequestOperationManager *afManager;
                    
                    return;
                }
+               NSDictionary *photoDic = [responseDic objectForKey:@"photo"];
+
+                NSDictionary *photoInfoDic = [NSDictionary dictionaryWithObjectsAndKeys:[photoDic objectForKey:@"owner"], @"owner", [[photoDic objectForKey:@"description"] objectForKey:@"_content"], @"description", [photoDic objectForKey:@"views"], @"views", [[photoDic objectForKey:@"comments"] objectForKey:@"_content"], @"comments",nil];
                
-                NSDictionary *photoInfoDic = [NSDictionary dictionaryWithObjectsAndKeys:[responseDic objectForKey:@"owner"], @"owner", [[responseDic objectForKey:@"description"] objectForKey:@"_content"], @"description", [responseDic objectForKey:@"views"], @"views", [[responseDic objectForKey:@"comments"] objectForKey:@"_content"], @"comments",nil];
+               NSLog(@"JSON depois: %@", photoInfoDic);
                
-               PhotoInfoResults *resultsObject = [MTLJSONAdapter modelOfClass:RecentPhotosResults.class fromJSONDictionary:photoInfoDic error:nil];
+               PhotoInfoResults *resultsObject = [MTLJSONAdapter modelOfClass:PhotoInfoResults.class fromJSONDictionary:photoInfoDic error:nil];
                
                [self requestPhotoInfoFinishedWithData:resultsObject];
                
-               //NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
+               NSLog(@"OBJ info: %@", resultsObject);
            }
      
            failure:^(AFHTTPRequestOperation *operation, NSError *error) {

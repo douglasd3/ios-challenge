@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RestAPIManager.h"
 #import "PhotoTableViewCell.h"
+#import "PhotoInfoTableViewController.h"
 
 @interface PhotosListTableViewController : UITableViewController<RestAPIManagerDelegate>
 

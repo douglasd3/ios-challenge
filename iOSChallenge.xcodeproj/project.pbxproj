@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4AC1EC13E4DD846766CA5D56 /* libPods-iOSChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */; };
+		84ACC4A31B3C3CA0007FF4FD /* PhotoInfoResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */; };
+		84ACC4A61B3C3CC2007FF4FD /* PhotoInfoOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */; };
+		84ACC4AD1B3C4C17007FF4FD /* PhotoInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */; };
 		A5446CAC1B3AE7F400162684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAB1B3AE7F400162684 /* main.m */; };
 		A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAE1B3AE7F400162684 /* AppDelegate.m */; };
 		A5446CB51B3AE7F500162684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB31B3AE7F500162684 /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		A5446CC61B3AE7F500162684 /* iOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */; };
 		A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */; };
 		A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */; };
-		A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* APIResults.m */; };
+		A5E1BF031B3B53CE00305562 /* RecentPhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* RecentPhotosResults.m */; };
 		A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF051B3B548000305562 /* PhotosResults.m */; };
 		A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */; };
 		A5E1BF0E1B3B9A0700305562 /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */; };
@@ -34,6 +37,12 @@
 
 /* Begin PBXFileReference section */
 		548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84ACC4A11B3C3CA0007FF4FD /* PhotoInfoResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoResults.h; sourceTree = "<group>"; };
+		84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoResults.m; sourceTree = "<group>"; };
+		84ACC4A41B3C3CC2007FF4FD /* PhotoInfoOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoOwner.h; sourceTree = "<group>"; };
+		84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoOwner.m; sourceTree = "<group>"; };
+		84ACC4AB1B3C4C17007FF4FD /* PhotoInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoTableViewController.h; sourceTree = "<group>"; };
+		84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoTableViewController.m; sourceTree = "<group>"; };
 		A5446CA61B3AE7F400162684 /* iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5446CAA1B3AE7F400162684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5446CAB1B3AE7F400162684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,8 +58,8 @@
 		A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIManager.m; sourceTree = "<group>"; };
 		A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoObject.h; sourceTree = "<group>"; };
 		A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
-		A5E1BF011B3B53CE00305562 /* APIResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResults.h; sourceTree = "<group>"; };
-		A5E1BF021B3B53CE00305562 /* APIResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResults.m; sourceTree = "<group>"; };
+		A5E1BF011B3B53CE00305562 /* RecentPhotosResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosResults.h; sourceTree = "<group>"; };
+		A5E1BF021B3B53CE00305562 /* RecentPhotosResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosResults.m; sourceTree = "<group>"; };
 		A5E1BF041B3B548000305562 /* PhotosResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosResults.h; sourceTree = "<group>"; };
 		A5E1BF051B3B548000305562 /* PhotosResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosResults.m; sourceTree = "<group>"; };
 		A5E1BF081B3B693700305562 /* PhotosListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosListTableViewController.h; sourceTree = "<group>"; };
@@ -80,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84ACC4AA1B3C44CE007FF4FD /* PhotoInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				84ACC4A11B3C3CA0007FF4FD /* PhotoInfoResults.h */,
+				84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */,
+				84ACC4A41B3C3CC2007FF4FD /* PhotoInfoOwner.h */,
+				84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */,
+			);
+			name = PhotoInfoModel;
+			sourceTree = "<group>";
+		};
 		A5446C9D1B3AE7F400162684 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +165,8 @@
 			children = (
 				A5E1BF081B3B693700305562 /* PhotosListTableViewController.h */,
 				A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */,
+				84ACC4AB1B3C4C17007FF4FD /* PhotoInfoTableViewController.h */,
+				84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +174,7 @@
 		A5E1BEF91B3B21C500305562 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84ACC4AA1B3C44CE007FF4FD /* PhotoInfoModel */,
 				A5E1BF071B3B662600305562 /* PhotoModel */,
 				A5E1BEFB1B3B22AA00305562 /* RestAPIManager.h */,
 				A5E1BEFC1B3B22AA00305562 /* RestAPIManager.m */,
@@ -174,10 +197,10 @@
 			children = (
 				A5E1BEFE1B3B4D5C00305562 /* PhotoObject.h */,
 				A5E1BEFF1B3B4D5C00305562 /* PhotoObject.m */,
-				A5E1BF011B3B53CE00305562 /* APIResults.h */,
-				A5E1BF021B3B53CE00305562 /* APIResults.m */,
 				A5E1BF041B3B548000305562 /* PhotosResults.h */,
 				A5E1BF051B3B548000305562 /* PhotosResults.m */,
+				A5E1BF011B3B53CE00305562 /* RecentPhotosResults.h */,
+				A5E1BF021B3B53CE00305562 /* RecentPhotosResults.m */,
 			);
 			name = PhotoModel;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 				TargetAttributes = {
 					A5446CA51B3AE7F400162684 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 62V7UYB347;
 					};
 					A5446CBE1B3AE7F500162684 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -343,8 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ACC4AD1B3C4C17007FF4FD /* PhotoInfoTableViewController.m in Sources */,
 				A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */,
-				A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */,
+				84ACC4A31B3C3CA0007FF4FD /* PhotoInfoResults.m in Sources */,
+				A5E1BF031B3B53CE00305562 /* RecentPhotosResults.m in Sources */,
+				84ACC4A61B3C3CC2007FF4FD /* PhotoInfoOwner.m in Sources */,
 				A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */,
 				A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */,
 				A5E1BF0E1B3B9A0700305562 /* PhotoTableViewCell.m in Sources */,
@@ -477,6 +504,7 @@
 			baseConfigurationReference = A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iOSChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,6 +517,7 @@
 			baseConfigurationReference = F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iOSChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -86,11 +86,38 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="7Zk-8U-sBv"/>
                     <connections>
                         <outlet property="loadPageView" destination="Per-ws-6aw" id="yUh-H4-rA4"/>
+                        <segue destination="4Bp-zn-ak5" kind="show" identifier="PhotoInfoSegue" id="XB4-0T-AEz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9t-kC-5Co" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="-632"/>
+            <point key="canvasLocation" x="1112" y="-637"/>
+        </scene>
+        <!--Photo Info Table View Controller-->
+        <scene sceneID="TPd-QX-yk1">
+            <objects>
+                <tableViewController id="4Bp-zn-ak5" customClass="PhotoInfoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RoM-AX-XKT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P1I-5i-USn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P1I-5i-USn" id="D34-aQ-zM9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4Bp-zn-ak5" id="CQf-Ma-GQd"/>
+                            <outlet property="delegate" destination="4Bp-zn-ak5" id="PYK-pQ-OFg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMa-ZQ-QY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="-637"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Lg-5S-COi">
