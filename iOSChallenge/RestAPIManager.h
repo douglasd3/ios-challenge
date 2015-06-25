@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 #import "APIResults.h"
 
 @protocol RestAPIManagerDelegate <NSObject>
@@ -20,6 +21,7 @@
 @property (nonatomic,strong) id <RestAPIManagerDelegate> delegate;
 
 - (void)getRecentPhotos;
+- (NSURL*)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject;
  
 
 @end

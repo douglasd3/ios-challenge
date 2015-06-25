@@ -57,6 +57,8 @@
     
     cell.photoTitle.text = photo.title;
     cell.photoOwner.text = photo.ownerName;
+            
+    [cell.photoThumb setImageWithURL:[self.apiManager getPhotoURLWithPhotoObject:photo]];
     
     return cell;
 }

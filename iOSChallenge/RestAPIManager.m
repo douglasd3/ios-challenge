@@ -59,6 +59,19 @@ AFHTTPRequestOperationManager *afManager;
            }];
 }
 
+- (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject{
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@_s.jpg", photoObject.farm, photoObject.server, photoObject.photoID, photoObject.secret];
+    
+    NSURL *imageURL = [NSURL URLWithString:urlString];
+    
+    NSLog(@"imageURL %@ ", urlString);
+    
+    return imageURL;
+
+}
+
+
 - (void)requestFinishedWithData:(APIResults *)results{
     
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleRestResponse:)]) {
