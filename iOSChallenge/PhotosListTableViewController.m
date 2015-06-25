@@ -51,11 +51,12 @@
     
     NSInteger row = [indexPath row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    PhotoTableViewCell *cell = (PhotoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
     
     PhotoObject *photo = [self.tableContents objectAtIndex:row];
     
-    cell.textLabel.text = photo.title;
+    cell.photoTitle.text = photo.title;
+    cell.photoOwner.text = photo.ownerName;
     
     return cell;
 }

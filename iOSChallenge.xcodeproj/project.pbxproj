@@ -19,6 +19,7 @@
 		A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF021B3B53CE00305562 /* APIResults.m */; };
 		A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF051B3B548000305562 /* PhotosResults.m */; };
 		A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */; };
+		A5E1BF0E1B3B9A0700305562 /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		A5E1BF051B3B548000305562 /* PhotosResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosResults.m; sourceTree = "<group>"; };
 		A5E1BF081B3B693700305562 /* PhotosListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosListTableViewController.h; sourceTree = "<group>"; };
 		A5E1BF091B3B693700305562 /* PhotosListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosListTableViewController.m; sourceTree = "<group>"; };
+		A5E1BF0C1B3B9A0700305562 /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
+		A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
 		A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +108,7 @@
 				A5E1BEF91B3B21C500305562 /* Model */,
 				A5E1BEF81B3B21B400305562 /* Controllers */,
 				A5E1BEFA1B3B21DA00305562 /* Resources */,
+				A5E1BF0B1B3B999E00305562 /* Views */,
 				A5446CA91B3AE7F400162684 /* Supporting Files */,
 			);
 			path = iOSChallenge;
@@ -176,6 +180,15 @@
 				A5E1BF051B3B548000305562 /* PhotosResults.m */,
 			);
 			name = PhotoModel;
+			sourceTree = "<group>";
+		};
+		A5E1BF0B1B3B999E00305562 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5E1BF0C1B3B9A0700305562 /* PhotoTableViewCell.h */,
+				A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D871EE4F11EE449D04767AC6 /* Pods */ = {
@@ -334,6 +347,7 @@
 				A5E1BF031B3B53CE00305562 /* APIResults.m in Sources */,
 				A5E1BF0A1B3B693700305562 /* PhotosListTableViewController.m in Sources */,
 				A5E1BEFD1B3B22AA00305562 /* RestAPIManager.m in Sources */,
+				A5E1BF0E1B3B9A0700305562 /* PhotoTableViewCell.m in Sources */,
 				A5E1BF061B3B548000305562 /* PhotosResults.m in Sources */,
 				A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */,
 				A5446CAC1B3AE7F400162684 /* main.m in Sources */,
