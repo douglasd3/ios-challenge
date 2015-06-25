@@ -10,6 +10,9 @@
 
 NSDictionary *tableContents;
 NSArray *keys;
+CGFloat imageHeight;
+UIImage *currentImage;
+UIImage *currentUserIcon;
 
 @interface PhotoInfoTableViewController ()
 
@@ -20,27 +23,16 @@ NSArray *keys;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"Photo %@ ", self.photo);
+    NSLog(@"Photow %@ ", self.photo);
     
     self.apiManager = [[RestAPIManager alloc] init];
     self.apiManager.delegate = self;
+    imageHeight = 0;
+    currentImage = nil;
+    currentUserIcon = nil;
     
     [self.apiManager getPhotoInfoForPhoto:self.photo];
     
-//    NSArray *section1 = @[@"userInfo", @"image", @"description"];
-//    
-//    NSArray *section2 = @[@""];
-//    
-//    menuItems = [NSDictionary dictionaryWithObjectsAndKeys:temp1, @"a", temp2, @"b", nil];
-//    
-//    keys = [[menuItems allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    //[teste getPhotoInfoForPhoto:self.photo];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,24 +60,62 @@ NSArray *keys;
     
     NSString *cellIdentifier = @"Cell";
     
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
     if (section == 0) {
         if (row == 0) {
             cellIdentifier = @"UserInfoCell";
         }
+        else if (row == 1){
+            cellIdentifier = @"ImageCell";
+        }
+    
     }
     
-    PhotoTableViewCell *cell = (PhotoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+
     
     
     if (section == 0) {
         if (row == 0) {
-            cell.photoOwner.text = self.photo.ownerName;
-            cell.photoTitle.text = self.photo.title;
             
-            cell.photoThumb.layer.masksToBounds = YES;
+            PhotoTableViewCell *photoCell = (PhotoTableViewCell *) cell;
+            photoCell.photoOwner.text = self.photo.ownerName;
+            photoCell.photoTitle.text = self.photo.title;
             
-            [cell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+            photoCell.photoThumb.layer.masksToBounds = YES;
+            
+            [photoCell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
+        }
+        else if(row == 1){
+            
+            ImageTableViewCell *imageCell = (ImageTableViewCell *)cell;
+            
+            NSURL *url = [self.apiManager getPhotoURLWithPhotoObject:self.photo andSize:IMAGE_SIZE_MEDIUM];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            
+            if (currentImage == nil) {
+                [imageCell.photoImage setImageWithURLRequest:request
+                                            placeholderImage:[UIImage imageNamed:@"placeholder"]
+                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                         NSLog(@"height i %f", image.size.height);
+                                                         NSLog(@"width i %f", image.size.width);
+                                                        
+                                                         imageHeight = image.size.height;
+                                                         
+                                                         currentImage = image;
+                                                         
+                                                         [self.tableView reloadData];
+                                                         
+                                                     } failure:nil];
+
+            }
+            else{
+                [imageCell.photoImage setImage:currentImage];
+                
+            }
+            
         }
     }
     
@@ -144,6 +174,9 @@ NSArray *keys;
     if (section == 0) {
         if (row == 0) {
             return 64;
+        }
+        else if (row == 1){
+            return imageHeight;
         }
     }
     

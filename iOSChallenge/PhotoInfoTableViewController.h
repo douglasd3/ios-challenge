@@ -11,6 +11,7 @@
 #import "PhotoObject.h"
 #import "PhotoInfoResults.h"
 #import "PhotoTableViewCell.h"
+#import "ImageTableViewCell.h"
 
 @interface PhotoInfoTableViewController : UITableViewController<RestAPIManagerDelegate>
 

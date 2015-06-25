@@ -11,6 +11,7 @@
 		84ACC4A31B3C3CA0007FF4FD /* PhotoInfoResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */; };
 		84ACC4A61B3C3CC2007FF4FD /* PhotoInfoOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */; };
 		84ACC4AD1B3C4C17007FF4FD /* PhotoInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */; };
+		84ACC4B01B3C6861007FF4FD /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4AF1B3C6861007FF4FD /* ImageTableViewCell.m */; };
 		A5446CAC1B3AE7F400162684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAB1B3AE7F400162684 /* main.m */; };
 		A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAE1B3AE7F400162684 /* AppDelegate.m */; };
 		A5446CB51B3AE7F500162684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB31B3AE7F500162684 /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 		84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoOwner.m; sourceTree = "<group>"; };
 		84ACC4AB1B3C4C17007FF4FD /* PhotoInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoTableViewController.h; sourceTree = "<group>"; };
 		84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoTableViewController.m; sourceTree = "<group>"; };
+		84ACC4AE1B3C6861007FF4FD /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		84ACC4AF1B3C6861007FF4FD /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		A5446CA61B3AE7F400162684 /* iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5446CAA1B3AE7F400162684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5446CAB1B3AE7F400162684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 			children = (
 				A5E1BF0C1B3B9A0700305562 /* PhotoTableViewCell.h */,
 				A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */,
+				84ACC4AE1B3C6861007FF4FD /* ImageTableViewCell.h */,
+				84ACC4AF1B3C6861007FF4FD /* ImageTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACC4AD1B3C4C17007FF4FD /* PhotoInfoTableViewController.m in Sources */,
+				84ACC4B01B3C6861007FF4FD /* ImageTableViewCell.m in Sources */,
 				A5E1BF001B3B4D5C00305562 /* PhotoObject.m in Sources */,
 				84ACC4A31B3C3CA0007FF4FD /* PhotoInfoResults.m in Sources */,
 				A5E1BF031B3B53CE00305562 /* RecentPhotosResults.m in Sources */,
