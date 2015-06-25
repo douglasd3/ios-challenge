@@ -37,11 +37,24 @@ AFHTTPRequestOperationManager *afManager;
                
                NSDictionary *responseDic = (NSDictionary *)responseObject;
                
+               NSLog(@"JSON: %@", responseDic);
+               
+               
+               if ([[responseDic objectForKey:@"stat"] isEqualToString:@"fail"]) {
+                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Image"
+                                                                       message:nil
+                                                                      delegate:nil
+                                                             cancelButtonTitle:@"Ok"
+                                                             otherButtonTitles:nil];
+                   [alertView show];
+                   
+                   return;
+               }
+               
                APIResults *resultsObject = [MTLJSONAdapter modelOfClass:APIResults.class fromJSONDictionary:responseDic error:nil];
                
                [self requestFinishedWithData:resultsObject];
                
-               NSLog(@"JSON: %@", responseDic);
                NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
            }
      
