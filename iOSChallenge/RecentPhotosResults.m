@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Douglas Barbosa. All rights reserved.
 //
 
-#import "APIResults.h"
+#import "RecentPhotosResults.h"
 
-@implementation APIResults
+@implementation RecentPhotosResults
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     // properties defined in header < : > key in JSON Dictionary

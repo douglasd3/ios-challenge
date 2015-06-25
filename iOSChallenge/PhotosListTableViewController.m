@@ -135,7 +135,7 @@ NSNumber *currentPage;
 
 #pragma mark - RestAPIManager delegate
 
-- (void)handleRestResponse:(APIResults *)results{
+- (void)handleRecentPhotosResponse:(RecentPhotosResults *)results{
     
     if (results) {
         
@@ -144,7 +144,7 @@ NSNumber *currentPage;
         //self.tableContents = [NSMutableArray arrayWithArray:results.photosResults.photos];
         
         [self.tableView reloadData];
-        //NSLog(@"response teste %@", results);
+        NSLog(@"response teste %@", results);
         
         [self setLoadPageViewAction];
         

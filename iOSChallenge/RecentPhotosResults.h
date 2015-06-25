@@ -11,7 +11,7 @@
 #import <MTLJSONAdapter.h>
 #import "PhotosResults.h"
 
-@interface APIResults : MTLModel<MTLJSONSerializing>
+@interface RecentPhotosResults : MTLModel<MTLJSONSerializing>
 
 @property(nonatomic, retain) PhotosResults *photosResults;
 @property(nonatomic, retain) NSString *status;

@@ -21,6 +21,7 @@ AFHTTPRequestOperationManager *afManager;
     
     if (self) {
         afManager = [AFHTTPRequestOperationManager manager];
+        afManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     
     return self;
@@ -29,8 +30,6 @@ AFHTTPRequestOperationManager *afManager;
 - (void)getRecentPhotosForPage:(NSNumber *)page{
     
     NSDictionary *parameters = @{@"method": @"flickr.photos.getRecent", @"api_key":API_KEY, @"per_page":PHOTOS_PER_PAGE, @"page":page, @"extras":@"owner_name", @"format":@"json", @"nojsoncallback":@"1"};
-    
-    afManager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [afManager GET:API_HOME parameters:parameters
      
@@ -52,9 +51,9 @@ AFHTTPRequestOperationManager *afManager;
                    return;
                }
                
-               APIResults *resultsObject = [MTLJSONAdapter modelOfClass:APIResults.class fromJSONDictionary:responseDic error:nil];
+               RecentPhotosResults *resultsObject = [MTLJSONAdapter modelOfClass:RecentPhotosResults.class fromJSONDictionary:responseDic error:nil];
                
-               [self requestFinishedWithData:resultsObject];
+               [self requestRecentPhotosFinishedWithData:resultsObject];
                
                //NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
            }
@@ -69,8 +68,57 @@ AFHTTPRequestOperationManager *afManager;
                                                          otherButtonTitles:nil];
                [alertView show];
                
-               [self requestFinishedWithData:nil];
+               [self requestRecentPhotosFinishedWithData:nil];
            }];
+}
+
+- (void)getPhotoInfoForPhoto:(PhotoObject *)photo{
+    
+        NSDictionary *parameters = @{@"method": @"flickr.photos.getInfo", @"api_key":API_KEY, @"photo_id":photo.photoID, @"format":@"json", @"nojsoncallback":@"1"};
+    
+        [afManager GET:API_HOME parameters:parameters
+     
+           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+               
+               NSDictionary *responseDic = (NSDictionary *)responseObject;
+               
+               NSLog(@"JSON Antes: %@", responseDic);
+               
+               
+               if ([[responseDic objectForKey:@"stat"] isEqualToString:@"fail"]) {
+                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Image"
+                                                                       message:nil
+                                                                      delegate:nil
+                                                             cancelButtonTitle:@"Ok"
+                                                             otherButtonTitles:nil];
+                   [alertView show];
+                   
+                   return;
+               }
+               
+                NSDictionary *photoInfoDic = [NSDictionary dictionaryWithObjectsAndKeys:[responseDic objectForKey:@"owner"], @"owner", [[responseDic objectForKey:@"description"] objectForKey:@"_content"], @"description", [responseDic objectForKey:@"views"], @"views", [[responseDic objectForKey:@"comments"] objectForKey:@"_content"], @"comments",nil];
+               
+               PhotoInfoResults *resultsObject = [MTLJSONAdapter modelOfClass:RecentPhotosResults.class fromJSONDictionary:photoInfoDic error:nil];
+               
+               [self requestPhotoInfoFinishedWithData:resultsObject];
+               
+               //NSLog(@"OBJ: %@", resultsObject.photosResults.photos);
+           }
+     
+           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               NSLog(@"Error: %@", error);
+               
+               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Image"
+                                                                   message:[error localizedDescription]
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"Ok"
+                                                         otherButtonTitles:nil];
+               [alertView show];
+               
+               [self requestRecentPhotosFinishedWithData:nil];
+           }];
+    
+    
 }
 
 - (NSURL *)getPhotoURLWithPhotoObject:(PhotoObject *)photoObject{
@@ -86,10 +134,17 @@ AFHTTPRequestOperationManager *afManager;
 }
 
 
-- (void)requestFinishedWithData:(APIResults *)results{
+- (void)requestRecentPhotosFinishedWithData:(RecentPhotosResults *)results{
     
-    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleRestResponse:)]) {
-        [self.delegate handleRestResponse:results];
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleRecentPhotosResponse:)]) {
+        [self.delegate handleRecentPhotosResponse:results];
+    }
+}
+
+- (void)requestPhotoInfoFinishedWithData:(PhotoInfoResults *)results{
+    
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handlePhotoInfoResponse:)]) {
+        [self.delegate handlePhotoInfoResponse:results];
     }
 }
 

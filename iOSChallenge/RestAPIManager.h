@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
-#import "APIResults.h"
+#import "RecentPhotosResults.h"
+#import "PhotoInfoResults.h"
 
 @protocol RestAPIManagerDelegate <NSObject>
-@required
-- (void) handleRestResponse:(APIResults *)results;
+@optional
+- (void) handleRecentPhotosResponse:(RecentPhotosResults *)results;
+- (void) handlePhotoInfoResponse:(PhotoInfoResults *)results;
 @end
 
 @interface RestAPIManager : NSObject
