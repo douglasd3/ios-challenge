@@ -9,7 +9,7 @@
 #import "RestAPIManager.h"
 
 #define API_HOME @"https://api.flickr.com/services/rest/"
-#define API_KEY @"5f1bda0ff51d35493f69a98774a10279"
+#define API_KEY @"31550200485e295aaa8b66227ef8a6cf"
 
 AFHTTPRequestOperationManager *afManager;
 
