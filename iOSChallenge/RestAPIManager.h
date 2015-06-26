@@ -17,7 +17,7 @@
 #define PHOTOS_PER_PAGE @"20"
 
 #define IMAGE_SIZE_THUMB @"s" //75x75
-#define IMAGE_SIZE_MEDIUM @"z"
+#define IMAGE_SIZE_MEDIUM @"c"
 @protocol RestAPIManagerDelegate <NSObject>
 @optional
 - (void) handleRecentPhotosResponse:(RecentPhotosResults *)results;

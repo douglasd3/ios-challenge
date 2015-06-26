@@ -111,6 +111,8 @@ UIImage *currentUserIcon;
     photoCell.photoThumb.layer.masksToBounds = YES;
     
     [photoCell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    
+    [photoCell setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 #pragma mark - ImageCell Config
@@ -143,6 +145,8 @@ UIImage *currentUserIcon;
         [imageCell.photoImage setImage:currentImage];
     }
     
+    [imageCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
 
 }
 
@@ -170,6 +174,8 @@ UIImage *currentUserIcon;
     UILabel *descLabel = (UILabel*)[cell.contentView viewWithTag:1];
     
     descLabel.text = self.photoInfo.photoDescription;
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
 }
 
@@ -202,6 +208,7 @@ UIImage *currentUserIcon;
         return;
     }
     viewLabel.text = [NSString stringWithFormat:@"%@ Views - %@ Comments", self.photoInfo.views, self.photoInfo.comments];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
 }
 

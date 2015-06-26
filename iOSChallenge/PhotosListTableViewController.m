@@ -52,7 +52,8 @@ PhotoObject *currentPhoto;
 
 - (void)tapLoadPageAction:(UITapGestureRecognizer *)tapGestureRecognizer{
     
-    [self.apiManager getRecentPhotosForPage:currentPage];
+    //[self.apiManager getRecentPhotosForPage:currentPage];
+    [self.apiManager getRecentPhotosForPage:[NSNumber numberWithInteger:1]];
     
 }
 
@@ -97,8 +98,6 @@ PhotoObject *currentPhoto;
     currentPhoto = [self.tableContents objectAtIndex:row];
     
     [self performSegueWithIdentifier:@"PhotoInfoSegue" sender:self];
-    
-    
 }
 
 #pragma mark - Navigation
@@ -131,7 +130,6 @@ PhotoObject *currentPhoto;
         currentPage = [NSNumber numberWithInteger:currentPage.integerValue + 1];
         
     }
-    
 }
 
 @end
