@@ -6,12 +6,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Recent Photos-->
         <scene sceneID="PNi-Y8-lbP">
             <objects>
                 <tableViewController id="Lo0-HB-g6U" customClass="PhotosListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" id="zyH-sb-Kkv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="Per-ws-6aw">
@@ -84,7 +84,7 @@
                             <outlet property="delegate" destination="Lo0-HB-g6U" id="vXt-8M-pEl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7Zk-8U-sBv"/>
+                    <navigationItem key="navigationItem" title="Recent Photos" id="7Zk-8U-sBv"/>
                     <connections>
                         <outlet property="loadPageView" destination="Per-ws-6aw" id="yUh-H4-rA4"/>
                         <segue destination="4Bp-zn-ak5" kind="show" identifier="PhotoInfoSegue" id="XB4-0T-AEz"/>
@@ -99,10 +99,10 @@
             <objects>
                 <tableViewController id="4Bp-zn-ak5" customClass="PhotoInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RoM-AX-XKT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="68" id="P1I-5i-USn" customClass="PhotoTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -235,9 +235,14 @@
         <scene sceneID="7Lg-5S-COi">
             <objects>
                 <navigationController id="Cyt-4s-HYx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rQb-xf-spC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rQb-xf-spC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.18431372549019609" green="0.5607843137254902" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.035294117647058823" green="0.21568627450980393" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Lo0-HB-g6U" kind="relationship" relationship="rootViewController" id="K4v-A4-XB3"/>

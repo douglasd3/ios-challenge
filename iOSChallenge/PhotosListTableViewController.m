@@ -29,6 +29,8 @@ PhotoObject *currentPhoto;
     self.tableContents = [[NSMutableArray alloc] init];
     
     [self.apiManager getRecentPhotosForPage:currentPage];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -32,6 +32,7 @@ UIImage *currentUserIcon;
     currentUserIcon = nil;
     
     [self.apiManager getPhotoInfoForPhoto:self.photo];
+    [self.navigationItem setTitle:self.photo.title];
     
 }
 
