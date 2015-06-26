@@ -11,7 +11,6 @@
 @implementation PhotoInfoOwner
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-    // properties defined in header < : > key in JSON Dictionary
     return @{
              @"nsid":@"nsid",
              @"username":@"username",

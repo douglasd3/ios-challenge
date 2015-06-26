@@ -44,9 +44,8 @@ AFHTTPRequestOperationManager *afManager;
                
                NSLog(@"JSON: %@", responseDic);
                
-               
                if ([[responseDic objectForKey:@"stat"] isEqualToString:@"fail"]) {
-                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Image"
+                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
                                                                        message:nil
                                                                       delegate:nil
                                                              cancelButtonTitle:@"Ok"
@@ -64,9 +63,9 @@ AFHTTPRequestOperationManager *afManager;
            }
      
            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               NSLog(@"Error: %@", error);
+               //NSLog(@"Error: %@", error);
                
-               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Image"
+               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
                                                                    message:[error localizedDescription]
                                                                   delegate:nil
                                                          cancelButtonTitle:@"Ok"
@@ -112,7 +111,7 @@ AFHTTPRequestOperationManager *afManager;
         }
       
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-           NSLog(@"Error: %@", error);
+           //NSLog(@"Error: %@", error);
            
            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
                                                                message:[error localizedDescription]
@@ -135,7 +134,7 @@ AFHTTPRequestOperationManager *afManager;
     
     NSURL *imageURL = [NSURL URLWithString:urlString];
     
-    NSLog(@"imageURL %@ ", urlString);
+    //NSLog(@"imageURL %@ ", urlString);
     
     return imageURL;
 
@@ -148,7 +147,7 @@ AFHTTPRequestOperationManager *afManager;
     
     NSURL *imageURL = [NSURL URLWithString:urlString];
     
-    NSLog(@"imageURL %@ ", urlString);
+    //NSLog(@"imageURL %@ ", urlString);
     
     return imageURL;
     

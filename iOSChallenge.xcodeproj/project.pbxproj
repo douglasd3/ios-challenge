@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45E04B37308B7EED48069062 /* libPods-iOSChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC7A3B06CBEC00920476BBD /* libPods-iOSChallengeTests.a */; };
 		4AC1EC13E4DD846766CA5D56 /* libPods-iOSChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */; };
 		84ACC4A31B3C3CA0007FF4FD /* PhotoInfoResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */; };
 		84ACC4A61B3C3CC2007FF4FD /* PhotoInfoOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4A51B3C3CC2007FF4FD /* PhotoInfoOwner.m */; };
 		84ACC4AD1B3C4C17007FF4FD /* PhotoInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */; };
 		84ACC4B01B3C6861007FF4FD /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACC4AF1B3C6861007FF4FD /* ImageTableViewCell.m */; };
+		84BD0FF61B3DD41900B7EAD9 /* RestAPIManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD0FF51B3DD41900B7EAD9 /* RestAPIManagerTests.m */; };
 		A5446CAC1B3AE7F400162684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAB1B3AE7F400162684 /* main.m */; };
 		A5446CAF1B3AE7F400162684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5446CAE1B3AE7F400162684 /* AppDelegate.m */; };
 		A5446CB51B3AE7F500162684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5446CB31B3AE7F500162684 /* Main.storyboard */; };
@@ -37,7 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2115A76FF5E7D3699C0D0334 /* Pods-iOSChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallengeTests/Pods-iOSChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		697B5CD27B6CC9677CD1DBF0 /* Pods-iOSChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallengeTests/Pods-iOSChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		84ACC4A11B3C3CA0007FF4FD /* PhotoInfoResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoResults.h; sourceTree = "<group>"; };
 		84ACC4A21B3C3CA0007FF4FD /* PhotoInfoResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoResults.m; sourceTree = "<group>"; };
 		84ACC4A41B3C3CC2007FF4FD /* PhotoInfoOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoOwner.h; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 		84ACC4AC1B3C4C17007FF4FD /* PhotoInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoTableViewController.m; sourceTree = "<group>"; };
 		84ACC4AE1B3C6861007FF4FD /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		84ACC4AF1B3C6861007FF4FD /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		84BD0FF51B3DD41900B7EAD9 /* RestAPIManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPIManagerTests.m; sourceTree = "<group>"; };
 		A5446CA61B3AE7F400162684 /* iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5446CAA1B3AE7F400162684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5446CAB1B3AE7F400162684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		A5E1BF0C1B3B9A0700305562 /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
 		A5E1BF0D1B3B9A0700305562 /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
 		A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		DBC7A3B06CBEC00920476BBD /* libPods-iOSChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSChallenge/Pods-iOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E04B37308B7EED48069062 /* libPods-iOSChallengeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A5446CC51B3AE7F500162684 /* iOSChallengeTests.m */,
+				84BD0FF51B3DD41900B7EAD9 /* RestAPIManagerTests.m */,
 				A5446CC31B3AE7F500162684 /* Supporting Files */,
 			);
 			path = iOSChallengeTests;
@@ -224,6 +232,8 @@
 			children = (
 				A6E4D8062D026C882E4B23F2 /* Pods-iOSChallenge.debug.xcconfig */,
 				F47D5BBD5BDA4DEFF607BD70 /* Pods-iOSChallenge.release.xcconfig */,
+				2115A76FF5E7D3699C0D0334 /* Pods-iOSChallengeTests.debug.xcconfig */,
+				697B5CD27B6CC9677CD1DBF0 /* Pods-iOSChallengeTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				548E6E646F548BDCBEA186EA /* libPods-iOSChallenge.a */,
+				DBC7A3B06CBEC00920476BBD /* libPods-iOSChallengeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -262,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5446CCC1B3AE7F500162684 /* Build configuration list for PBXNativeTarget "iOSChallengeTests" */;
 			buildPhases = (
+				D11D470AF57EB5896891D1BE /* Check Pods Manifest.lock */,
 				A5446CBB1B3AE7F500162684 /* Sources */,
 				A5446CBC1B3AE7F500162684 /* Frameworks */,
 				A5446CBD1B3AE7F500162684 /* Resources */,
+				BFC8522B9BDADFF7EFE491C6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,6 +363,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BFC8522B9BDADFF7EFE491C6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSChallengeTests/Pods-iOSChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D11D470AF57EB5896891D1BE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		DF230396BF7273C10EA6AF16 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BD0FF61B3DD41900B7EAD9 /* RestAPIManagerTests.m in Sources */,
 				A5446CC61B3AE7F500162684 /* iOSChallengeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +577,7 @@
 		};
 		A5446CCD1B3AE7F500162684 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2115A76FF5E7D3699C0D0334 /* Pods-iOSChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -552,6 +597,7 @@
 		};
 		A5446CCE1B3AE7F500162684 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 697B5CD27B6CC9677CD1DBF0 /* Pods-iOSChallengeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

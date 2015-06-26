@@ -7,6 +7,7 @@ target 'iOSChallenge' do
 end
 
 target 'iOSChallengeTests' do
-
+	pod 'AFNetworking', '~> 2.5'
+	pod 'Mantle', '~> 2.0'
 end
 

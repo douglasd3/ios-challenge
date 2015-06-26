@@ -11,7 +11,6 @@
 @implementation PhotosResults
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-    // properties defined in header < : > key in JSON Dictionary
     return @{
              @"photos":@"photo",
              @"total":@"total",
