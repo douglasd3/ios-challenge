@@ -11,6 +11,7 @@
 NSDictionary *tableContents;
 NSArray *keys;
 CGFloat imageHeight;
+CGFloat descriptionHeight;
 UIImage *currentImage;
 UIImage *currentUserIcon;
 
@@ -20,14 +21,13 @@ UIImage *currentUserIcon;
 
 @implementation PhotoInfoTableViewController
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"Photow %@ ", self.photo);
-    
     self.apiManager = [[RestAPIManager alloc] init];
     self.apiManager.delegate = self;
-    imageHeight = 0;
     currentImage = nil;
     currentUserIcon = nil;
     
@@ -58,113 +58,25 @@ UIImage *currentUserIcon;
     NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
     
-    NSString *cellIdentifier = @"Cell";
-    
-//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
     if (section == 0) {
         if (row == 0) {
-            cellIdentifier = @"UserInfoCell";
+            return [self userInfoCellAtIndexPath:indexPath];
         }
         else if (row == 1){
-            cellIdentifier = @"ImageCell";
+            
+            return [self imageellAtIndexPath:indexPath];
+            
         }
-    
-    }
-    
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-
-    
-    
-    if (section == 0) {
-        if (row == 0) {
-            
-            PhotoTableViewCell *photoCell = (PhotoTableViewCell *) cell;
-            photoCell.photoOwner.text = self.photo.ownerName;
-            photoCell.photoTitle.text = self.photo.title;
-            
-            photoCell.photoThumb.layer.masksToBounds = YES;
-            
-            [photoCell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-
-        }
-        else if(row == 1){
-            
-            ImageTableViewCell *imageCell = (ImageTableViewCell *)cell;
-            
-            NSURL *url = [self.apiManager getPhotoURLWithPhotoObject:self.photo andSize:IMAGE_SIZE_MEDIUM];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            
-            if (currentImage == nil) {
-                [imageCell.photoImage setImageWithURLRequest:request
-                                            placeholderImage:[UIImage imageNamed:@"placeholder"]
-                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                                         NSLog(@"height i %f", image.size.height);
-                                                         NSLog(@"width i %f", image.size.width);
-                                                        
-                                                         imageHeight = image.size.height;
-                                                         
-                                                         currentImage = image;
-                                                         
-                                                         [self.tableView reloadData];
-                                                         
-                                                     } failure:nil];
-
-            }
-            else{
-                [imageCell.photoImage setImage:currentImage];
-                
-            }
-            
+        else{
+            return [self descriptionCellAtIndexPath:indexPath];
         }
     }
     
-    return cell;
+    return nil;
+    
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -173,27 +85,131 @@ UIImage *currentUserIcon;
     
     if (section == 0) {
         if (row == 0) {
-            return 64;
+            return 68;
         }
         else if (row == 1){
-            return imageHeight;
+            return [self heightForImageCellAtIndexPath:indexPath];
+        }
+        else if(row == 2){
+            return [self heightForDescroptionCellAtIndexPath:indexPath];
         }
     }
     
-    return 44;
+    return 0;
     
     
 }
 
+#pragma mark - UserCell Config
+
+- (PhotoTableViewCell *)userInfoCellAtIndexPath:(NSIndexPath *)indexPath {
+    PhotoTableViewCell *cell = (PhotoTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:@"UserInfoCell" forIndexPath:indexPath];
+    [self configureUserInfoCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureUserInfoCell:(PhotoTableViewCell *)photoCell atIndexPath:(NSIndexPath *)indexPath {
+    photoCell.photoOwner.text = self.photo.ownerName;
+    photoCell.photoTitle.text = self.photo.title;
+    
+    photoCell.photoThumb.layer.masksToBounds = YES;
+    
+    [photoCell.photoThumb setImageWithURL:[self.apiManager getUserIconURLWithPhotoInfoOwner:self.photoInfo.photoOwner] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+}
+
+#pragma mark - ImageCell Config
+
+- (ImageTableViewCell *)imageellAtIndexPath:(NSIndexPath *)indexPath {
+    ImageTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+    [self configureImageCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureImageCell:(ImageTableViewCell *)imageCell atIndexPath:(NSIndexPath *)indexPath {
+
+    if (currentImage == nil) {
+        NSURL *url = [self.apiManager getPhotoURLWithPhotoObject:self.photo andSize:IMAGE_SIZE_MEDIUM];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        
+        [imageCell.photoImage setImageWithURLRequest:request
+                                    placeholderImage:[UIImage imageNamed:@"photoPlaceholder"]
+                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                 currentImage = image;
+                                                 
+                                                 [self.tableView reloadData];
+                                                 
+                                                 
+                                             } failure:nil];
+    }
+    else{
+        [imageCell.photoImage setBackgroundColor:[UIColor clearColor]];
+        [imageCell.photoImage setImage:currentImage];
+    }
+    
+
+}
+
+- (CGFloat)heightForImageCellAtIndexPath:(NSIndexPath *)indexPath {
+    static ImageTableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:@"ImageCell"];
+    });
+    
+    [self configureImageCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+#pragma mark - DescriptionCell Config
+
+- (UITableViewCell *)descriptionCellAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"DescriptionCell" forIndexPath:indexPath];
+    [self configureDescriptionCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureDescriptionCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    UILabel *descLabel = (UILabel*)[cell.contentView viewWithTag:1];
+    
+    descLabel.text = self.photoInfo.photoDescription;
+
+}
+
+- (CGFloat)heightForDescroptionCellAtIndexPath:(NSIndexPath *)indexPath {
+    static UITableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:@"DescriptionCell"];
+    });
+    
+    [self configureDescriptionCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+#pragma mark - Auxiliar methods
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    sizingCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds));
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; // Add 1.0f for the cell separator height
+}
+
+#pragma mark - RestAPIManager Delegate
 - (void)handlePhotoInfoResponse:(PhotoInfoResults *)results{
     
     self.photoInfo = results;
     
     NSArray *section1 = @[@"userInfo", @"image", @"description"];
 
-    NSArray *section2 = @[@""];
+    //NSArray *section2 = @[@""];
 
-    tableContents = [NSDictionary dictionaryWithObjectsAndKeys:section1, @"a", section2, @"b", nil];
+    //tableContents = [NSDictionary dictionaryWithObjectsAndKeys:section1, @"a", section2, @"b", nil];
+    
+    tableContents = [NSDictionary dictionaryWithObjectsAndKeys:section1, @"a", nil];
 
     keys = [[tableContents allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
