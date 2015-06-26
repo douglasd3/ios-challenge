@@ -183,7 +183,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="584" translatesAutoresizingMaskIntoConstraints="NO" id="Xbb-XK-Tom">
-                                            <rect key="frame" x="8" y="10" width="584" height="29"/>
+                                            <rect key="frame" x="8" y="5" width="584" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -191,19 +191,34 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Xbb-XK-Tom" secondAttribute="bottom" constant="5" id="4Md-CZ-Hvo"/>
-                                        <constraint firstItem="Xbb-XK-Tom" firstAttribute="top" secondItem="dnR-RJ-K4Z" secondAttribute="top" constant="10" id="IV0-20-XIU"/>
+                                        <constraint firstItem="Xbb-XK-Tom" firstAttribute="top" secondItem="dnR-RJ-K4Z" secondAttribute="top" constant="5" id="IV0-20-XIU"/>
                                         <constraint firstItem="Xbb-XK-Tom" firstAttribute="leading" secondItem="dnR-RJ-K4Z" secondAttribute="leading" constant="8" id="MwC-ce-t2u"/>
                                         <constraint firstAttribute="trailing" secondItem="Xbb-XK-Tom" secondAttribute="trailing" constant="8" id="dbZ-Eb-lnM"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="nNY-yB-blB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewCell" rowHeight="25" id="nNY-yB-blB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nNY-yB-blB" id="CSQ-7P-CC3">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4y6-RA-ubI">
+                                            <rect key="frame" x="10" y="2" width="580" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="4y6-RA-ubI" secondAttribute="bottom" constant="2" id="3ZI-vv-nMN"/>
+                                        <constraint firstAttribute="trailing" secondItem="4y6-RA-ubI" secondAttribute="trailing" constant="10" id="CQf-Cf-fGT"/>
+                                        <constraint firstItem="4y6-RA-ubI" firstAttribute="leading" secondItem="CSQ-7P-CC3" secondAttribute="leading" constant="10" id="Hfv-nG-hZr"/>
+                                        <constraint firstItem="4y6-RA-ubI" firstAttribute="top" secondItem="CSQ-7P-CC3" secondAttribute="top" constant="2" id="Vc7-VV-PaY"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -55,49 +55,44 @@ UIImage *currentUserIcon;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger section = [indexPath section];
+//    NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
-    
-    if (section == 0) {
-        if (row == 0) {
-            return [self userInfoCellAtIndexPath:indexPath];
-        }
-        else if (row == 1){
-            
-            return [self imageellAtIndexPath:indexPath];
-            
-        }
-        else{
-            return [self descriptionCellAtIndexPath:indexPath];
-        }
+
+    if (row == 0) {
+        return [self userInfoCellAtIndexPath:indexPath];
     }
-    
-    return nil;
-    
+    else if (row == 1){
+        
+        return [self imageellAtIndexPath:indexPath];
+        
+    }
+    else if (row == 2){
+        return [self descriptionCellAtIndexPath:indexPath];
+    }
+    else{
+        return [self viewCellAtIndexPath:indexPath];
+    }
 }
 
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSInteger section = [indexPath section];
+//    NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
-    
-    if (section == 0) {
-        if (row == 0) {
-            return 68;
-        }
-        else if (row == 1){
-            return [self heightForImageCellAtIndexPath:indexPath];
-        }
-        else if(row == 2){
-            return [self heightForDescroptionCellAtIndexPath:indexPath];
-        }
+
+    if (row == 0) {
+        return 68;
     }
-    
-    return 0;
-    
-    
+    else if (row == 1){
+        return [self heightForImageCellAtIndexPath:indexPath];
+    }
+    else if(row == 2){
+        return [self heightForDescroptionCellAtIndexPath:indexPath];
+    }
+    else{
+        return 25;
+    }
 }
 
 #pragma mark - UserCell Config
@@ -188,6 +183,27 @@ UIImage *currentUserIcon;
     return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 
+#pragma mark - ViewsCell Config
+
+- (UITableViewCell *)viewCellAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ViewCell" forIndexPath:indexPath];
+    [self configureViewCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    UILabel *viewLabel = (UILabel*)[cell.contentView viewWithTag:2];
+    
+    if (!self.photoInfo){
+        viewLabel.text = @"";
+        
+        return;
+    }
+    viewLabel.text = [NSString stringWithFormat:@"%@ Views - %@ Comments", self.photoInfo.views, self.photoInfo.comments];
+    
+}
+
 #pragma mark - Auxiliar methods
 
 - (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
@@ -203,7 +219,7 @@ UIImage *currentUserIcon;
     
     self.photoInfo = results;
     
-    NSArray *section1 = @[@"userInfo", @"image", @"description"];
+    NSArray *section1 = @[@"userInfo", @"image", @"description", @"views"];
 
     //NSArray *section2 = @[@""];
 
